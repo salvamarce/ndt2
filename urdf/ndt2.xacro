@@ -1,0 +1,383 @@
+<?xml version="1.0" ?>
+<robot name="ndt2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find ndt2)/urdf/materials.xacro" />
+<xacro:include filename="$(find ndt2)/urdf/URDF.trans" />
+<xacro:include filename="$(find ndt2)/urdf/URDF.gazebo" />
+<!-- <xacro:include filename="$(find ndt2)/urdf/rotors.xacro" /> -->
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 3.2052801764670846e-14 -0.020836528404107692"/>
+    <mass value="70.27983381048993"/>
+    <inertia ixx="2.617289" ixy="-0.0" ixz="0.0" iyy="2.113425" iyz="0.0" izz="1.714442"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Arm_4">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.08301419082322248 -0.08301459859447588 2.1510571102112408e-16"/>
+    <mass value="4.662701509038038"/>
+    <inertia ixx="0.023319" ixy="0.018729" ixz="0.0" iyy="0.023319" iyz="-0.0" izz="0.038931"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.224433 0.234052 -0.04"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/arm.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.224433 0.234052 -0.04"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/arm.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Arm_2">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.08301419082322048 0.08301459859447793 2.5673907444456745e-16"/>
+    <mass value="4.662701509038038"/>
+    <inertia ixx="0.023319" ixy="0.018729" ixz="0.0" iyy="0.023319" iyz="0.0" izz="0.038931"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.224433 -0.234052 -0.04"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/arm.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.224433 -0.234052 -0.04"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/arm.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Arm_3">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.08301419082322053 -0.08301459859447782 2.498001805406602e-16"/>
+    <mass value="4.662701509038038"/>
+    <inertia ixx="0.023319" ixy="-0.018729" ixz="-0.0" iyy="0.023319" iyz="0.0" izz="0.038931"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.224433 0.234052 -0.04"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/arm.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.224433 0.234052 -0.04"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/arm.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Arm_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.08301419082322248 0.08301459859447594 2.2898349882893854e-16"/>
+    <mass value="4.662701509038038"/>
+    <inertia ixx="0.023319" ixy="-0.018729" ixz="0.0" iyy="0.023319" iyz="-0.0" izz="0.038931"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.224433 -0.234052 -0.04"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/arm.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.224433 -0.234052 -0.04"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/arm.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<!--
+
+<link name="18x6_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="8.957598940373401e-08 4.979450317077472e-07 -0.0035705745977595155"/>
+    <mass value="0.06925249384879523"/>
+    <inertia ixx="0.001153" ixy="-6e-05" ixz="0.0" iyy="1e-05" iyz="-0.0" izz="0.001161"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.344641 -0.35426 -0.11"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.344641 -0.35426 -0.11"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="18x6_2">
+  <inertial>
+    <origin rpy="0 0 0" xyz="8.957598940373401e-08 4.979450317077472e-07 -0.0001344607921762546"/>
+    <mass value="0.06925249384879523"/>
+    <inertia ixx="0.001153" ixy="-6e-05" ixz="0.0" iyy="1e-05" iyz="-0.0" izz="0.001161"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.344641 -0.35426 0.03"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.344641 -0.35426 0.03"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="18x6_3">
+  <inertial>
+    <origin rpy="0 0 0" xyz="8.957598962577862e-08 -4.968038889163751e-07 -0.0035705745977589465"/>
+    <mass value="0.06925249384879523"/>
+    <inertia ixx="0.001153" ixy="-6e-05" ixz="0.0" iyy="1e-05" iyz="-0.0" izz="0.001161"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.344641 0.35426 -0.11"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.344641 0.35426 -0.11"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="18x6_4">
+  <inertial>
+    <origin rpy="0 0 0" xyz="8.957598940373401e-08 -4.968038889163751e-07 -0.00013446079217565438"/>
+    <mass value="0.06925249384879523"/>
+    <inertia ixx="0.001153" ixy="-6e-05" ixz="0.0" iyy="1e-05" iyz="-0.0" izz="0.001161"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.344641 0.35426 0.03"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.344641 0.35426 0.03"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="18x6_5">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-8.963042030796231e-08 4.979450318187695e-07 -0.0035705745977596126"/>
+    <mass value="0.06925249384879523"/>
+    <inertia ixx="0.001153" ixy="-6e-05" ixz="0.0" iyy="1e-05" iyz="-0.0" izz="0.001161"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.344641 -0.35426 -0.11"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_5.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.344641 -0.35426 -0.11"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_5.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="18x6_6">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-8.963042025245116e-08 4.979450315412137e-07 -0.00013446079217619908"/>
+    <mass value="0.06925249384879523"/>
+    <inertia ixx="0.001153" ixy="-6e-05" ixz="0.0" iyy="1e-05" iyz="-0.0" izz="0.001161"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.344641 -0.35426 0.03"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_6.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.344641 -0.35426 0.03"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_6.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="18x6_8">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-8.963042069654037e-08 -4.968038889718862e-07 -0.003570574597758766"/>
+    <mass value="0.06925249384879523"/>
+    <inertia ixx="0.001153" ixy="-6e-05" ixz="0.0" iyy="1e-05" iyz="-0.0" izz="0.001161"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.344641 0.35426 -0.11"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_8.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.344641 0.35426 -0.11"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_8.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="18x6_7">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-8.963042075205152e-08 -4.968038887498416e-07 -0.0001344607921755503"/>
+    <mass value="0.06925249384879523"/>
+    <inertia ixx="0.001153" ixy="-6e-05" ixz="0.0" iyy="1e-05" iyz="-0.0" izz="0.001161"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.344641 0.35426 0.03"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_7.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.344641 0.35426 0.03"/>
+    <geometry>
+      <mesh filename="package://ndt2/meshes/18x6_7.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+-->
+
+<joint name="Rev2" type="continuous">
+  <origin rpy="0 0 0" xyz="0.224433 -0.234052 0.04"/>
+  <parent link="base_link"/>
+  <child link="Arm_4"/>
+  <axis xyz="-0.707107 0.707107 0.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<joint name="Rev3" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.224433 0.234052 0.04"/>
+  <parent link="base_link"/>
+  <child link="Arm_2"/>
+  <axis xyz="-0.707107 0.707107 -0.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<joint name="Rev4" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.224433 -0.234052 0.04"/>
+  <parent link="base_link"/>
+  <child link="Arm_3"/>
+  <axis xyz="0.707107 0.707107 0.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<joint name="Rev5" type="continuous">
+  <origin rpy="0 0 0" xyz="0.224433 0.234052 0.04"/>
+  <parent link="base_link"/>
+  <child link="Arm_1"/>
+  <axis xyz="-0.707107 -0.707107 0.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<!--
+<joint name="Rev6" type="continuous">
+  <origin rpy="0 0 0" xyz="0.120208 0.120208 0.07"/>
+  <parent link="Arm_1"/>
+  <child link="18x6_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<joint name="Rev7" type="continuous">
+  <origin rpy="0 0 0" xyz="0.120208 0.120208 -0.07"/>
+  <parent link="Arm_1"/>
+  <child link="18x6_2"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<joint name="Rev8" type="continuous">
+  <origin rpy="0 0 0" xyz="0.120208 -0.120208 0.07"/>
+  <parent link="Arm_4"/>
+  <child link="18x6_3"/>
+  <axis xyz="-0.0 -0.0 1.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<joint name="Rev9" type="continuous">
+  <origin rpy="0 0 0" xyz="0.120208 -0.120208 -0.07"/>
+  <parent link="Arm_4"/>
+  <child link="18x6_4"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<joint name="Rev10" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.120208 0.120208 0.07"/>
+  <parent link="Arm_2"/>
+  <child link="18x6_5"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<joint name="Rev11" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.120208 0.120208 -0.07"/>
+  <parent link="Arm_2"/>
+  <child link="18x6_6"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<joint name="Rev12" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.120208 -0.120208 0.07"/>
+  <parent link="Arm_3"/>
+  <child link="18x6_8"/>
+  <axis xyz="-0.0 -0.0 1.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+
+<joint name="Rev13" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.120208 -0.120208 -0.07"/>
+  <parent link="Arm_3"/>
+  <child link="18x6_7"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+  <limit effort="30" velocity="1.0"  />
+</joint>
+-->
+
+</robot>
